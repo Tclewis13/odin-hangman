@@ -1,13 +1,18 @@
-require_relative 'guess'
-
 class Display
   attr_accessor :word_length, :display_array
 
-  attr_reader :guesses_left
-
   def initialize(word_length)
-    self.guesses_left = 11
     self.word_length = word_length
-    self.display_array = Array.new(self.word_length)
+    self.display_array = Array.new(self.word_length - 1)
+  end
+
+  def draw_display(solution)
+    solution.each do |letter|
+      if letter == ''
+        print '_ '
+      else
+        print "#{letter} "
+      end
+    end
   end
 end
