@@ -1,0 +1,33 @@
+---
+:game: !ruby/object:Game
+  fails_remaining: 5
+  word: 'attractive
+
+    '
+  solution:
+  - a
+  - t
+  - t
+  - r
+  - a
+  - ''
+  - t
+  - i
+  - v
+  - e
+  wrong_guesses:
+  - s
+  - h
+:display: !ruby/object:Display
+  word_length: 11
+  display_array:
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
