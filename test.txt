@@ -1,0 +1,37 @@
+---
+:game: !ruby/object:Game
+  fails_remaining: 1
+  word: 'suggesting
+
+    '
+  solution:
+  - ''
+  - ''
+  - ''
+  - ''
+  - e
+  - ''
+  - t
+  - i
+  - ''
+  - ''
+  wrong_guesses:
+  - a
+  - b
+  - k
+  - d
+  - c
+  - l
+:display: !ruby/object:Display
+  word_length: 11
+  display_array:
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -

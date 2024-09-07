@@ -39,20 +39,28 @@ def intro(game, display)
 end
 
 def load_game
-  in_file = File.open('out.txt', 'r')
-  hash_serialized = File.read(in_file)
-  save_hash = YAML.load(hash_serialized, permitted_classes: [Game, Display, Symbol])
-  game = save_hash[:game]
-  display = save_hash[:display]
-  display.draw_display(game.solution)
-  game_flow(game, display)
+  puts 'Input name of your save file (without .txt)'
+  save_name = gets.chomp
+  if File.exist?("#{save_name}.txt")
+    in_file = File.open("#{save_name}.txt", 'r')
+    hash_serialized = File.read(in_file)
+    save_hash = YAML.load(hash_serialized, permitted_classes: [Game, Display, Symbol])
+    game = save_hash[:game]
+    display = save_hash[:display]
+    display.draw_display(game.solution)
+    game_flow(game, display)
+  else
+    puts 'Save does not exist. Exiting program.'
+  end
 end
 
 def save_game(game, display)
+  puts 'Input name of your save file (without .txt)'
+  save_name = gets.chomp
   save_hash = {}
   save_hash[:game] = game
   save_hash[:display] = display
-  out_file = File.new('out.txt', 'w')
+  out_file = File.new("#{save_name}.txt", 'w')
   out_file.puts(save_hash.to_yaml)
   out_file.close
   exit
